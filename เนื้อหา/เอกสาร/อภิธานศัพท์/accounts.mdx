@@ -1,4 +1,9 @@
----
+---payments.call().then(function handlePage(paymentsPage) {
+  paymentsPage.records.forEach(function (payment) {
+    // handle a payment
+  });
+  return paymentsPage.next().then(handlePage);
+});
 title: Accounts
 order:
 ---
